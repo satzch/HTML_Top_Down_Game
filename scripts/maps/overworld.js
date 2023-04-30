@@ -12,14 +12,13 @@ const overworld = {
   },
   map_pos: { x: 0, y: 0 },
   map_size: { w: 150, h: 100 },
-  map_scale: 3,
   draw_map: function (map_layer, tiles_w, tiles_h) {
     ctx.drawImage(
       map_layer,
       0,
       0,
-      tiles_w * TILE_SIZE * this.map_scale,
-      tiles_h * TILE_SIZE * this.map_scale
+      tiles_w * TILE_SIZE * SCALE,
+      tiles_h * TILE_SIZE * SCALE
     );
   },
   speak: function () {

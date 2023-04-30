@@ -1,4 +1,3 @@
-let TILE_SIZE = 16;
 
 const no_of_frames = 4;
 
@@ -17,7 +16,7 @@ const player = {
     anim_row: anims.walk_f,
     anim_frame: 0,
     draw: function(anim_row, anim_frame){
-        ctx.drawImage(sprite, anim_frame, anim_row * TILE_SIZE, 16, 16, player.pos.x, player.pos.y, TILE_SIZE*map_scale, TILE_SIZE*map_scale);
+        ctx.drawImage(sprite, anim_frame, anim_row * TILE_SIZE, 16, 16, player.pos.x, player.pos.y, TILE_SIZE*SCALE, TILE_SIZE*SCALE);
     }
 }
 
