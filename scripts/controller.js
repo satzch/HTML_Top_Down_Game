@@ -3,7 +3,7 @@ let keymap = {}
 
 function gameLoop(){
     draw_frame(player.anim_row, Math.floor(player.anim_frame/TILE_SIZE)* TILE_SIZE);
-    default_values();
+    default_values(overworld);
 }
 
 let gameloop = setInterval(gameLoop, 20);
@@ -18,19 +18,19 @@ document.addEventListener('keydown', (e) => {
         speed = 5;
     }
     if(e.code === "ArrowUp"){
-        map_pos.y += speed;
+        CURR_MAP.map_pos.y += speed;
         player.pos.y -= speed;
         player.anim_row = anims.walk_b;
     }else if(e.code === "ArrowDown"){
-        map_pos.y -= speed;
+        CURR_MAP.map_pos.y -= speed;
         player.pos.y += speed;
         player.anim_row = anims.walk_f;
     }else if(e.code === "ArrowLeft"){
-        map_pos.x += speed;
+        CURR_MAP.map_pos.x += speed;
         player.pos.x -= speed;
         player.anim_row = anims.walk_l;
     }else if(e.code === "ArrowRight"){
-        map_pos.x -= speed;
+        CURR_MAP.map_pos.x -= speed;
         player.pos.x += speed;
         player.anim_row = anims.walk_r;
     }else if(e.code === "Escape"){
@@ -58,8 +58,8 @@ function handleEvents(){
 
 }
 
-function default_values(){
-    map_pos.x = 0;
-    map_pos.y = 0;
+function default_values(map_to_draw){
+    map_to_draw.map_pos.x = 0;
+    map_to_draw.map_pos.y = 0;
 }
 

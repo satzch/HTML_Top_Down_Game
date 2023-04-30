@@ -31,3 +31,5 @@ const overworld = {
 };
 
 // overworld.speak();
+
+CURR_MAP = overworld
