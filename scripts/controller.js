@@ -3,7 +3,7 @@ let keymap = {}
 
 function gameLoop(){
     draw_frame(player.anim_row, Math.floor(player.anim_frame/TILE_SIZE)* TILE_SIZE);
-    default_values(overworld);
+    default_values(CURR_MAP);
 }
 
 let gameloop = setInterval(gameLoop, 20);

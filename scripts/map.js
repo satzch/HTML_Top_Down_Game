@@ -9,14 +9,14 @@ function draw_frame(anim_row = 0, anim_frame = anims.walk_f, map_to_draw = CURR_
   ctx.clearRect(0, 0, map_to_draw.map_size.w * TILE_SIZE * SCALE, map_to_draw.map_size.h * TILE_SIZE * SCALE);
   ctx.translate(map_to_draw.map_pos.x, map_to_draw.map_pos.y);
 
-  Object.keys(overworld.map_layers_below_player).forEach(element => {
-    draw_map(overworld.map_layers_below_player[element], map_to_draw.map_size.w, map_to_draw.map_size.h);
+  Object.keys(map_to_draw.map_layers_below_player).forEach(element => {
+    draw_map(map_to_draw.map_layers_below_player[element], map_to_draw.map_size.w, map_to_draw.map_size.h);
   });
 
   player.draw(anim_row, anim_frame);
 
-  Object.keys(overworld.map_layers_above_player).forEach(element => {
-    draw_map(overworld.map_layers_above_player[element], map_to_draw.map_size.w, map_to_draw.map_size.h);
+  Object.keys(map_to_draw.map_layers_above_player).forEach(element => {
+    draw_map(map_to_draw.map_layers_above_player[element], map_to_draw.map_size.w, map_to_draw.map_size.h);
   });
 }
 
