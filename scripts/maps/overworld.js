@@ -23,7 +23,11 @@ const overworld = {
     );
   },
   speak: function () {
-    console.log("inside" + this.map_layers.map_ground_filler);
+    console.log("inside" + this.map_layers_below_player.map_ground_filler);
+
+    // Object.keys(this.map_layers_below_player).forEach(element => {
+    //   console.log(this.map_layers_below_player[element]);
+    // });
   },
 };
 
